@@ -58,7 +58,7 @@ public class Punter {
 	
 	
 	public boolean balanceExceedsLimitBy(int amount) {
-		return (balance - amount > limit);
+		return (balance - amount >= limit);
 	}
 
 	
@@ -83,7 +83,7 @@ public class Punter {
         if (state.equals(State.BETTING)) {
             balance = balance + currentBet;
             currentBet = 0;
-            state = State.NOT_BETTING;
+            state = State.RECEIVING_WINNINGS;
         }
     }
 
@@ -101,7 +101,6 @@ public class Punter {
 	
     public void loseBet() {
         if (state.equals(State.BETTING)) {
-            balance = balance - currentBet;
             currentBet = 0;
             state = State.NOT_BETTING;
         }
