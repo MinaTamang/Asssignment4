@@ -31,7 +31,7 @@ public enum Face {
     
     public static Face getRandom() {
         Face[] faces = Face.values();
-        int len = faces.length - 1;
+        int len = faces.length ;
         int rand = random.nextInt(len);
         int index = rand % len ;
         Face face = faces[index];
